@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Typography, Box, TextField } from '@mui/material';
 
-const Quesbar = (activeStep) => {
+const Quesbar1 = (activeStep) => {
     const [message, setMessage] = useState('')
     const [response, setResponse] = useState('')
     const [isLoading, setIsLoading] = useState(false);
@@ -105,5 +105,4 @@ const Quesbar = (activeStep) => {
     );
 };
 
-export default Quesbar;
-
+export default Quesbar1

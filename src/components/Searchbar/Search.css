@@ -1,0 +1,87 @@
+.Searchbar{
+    display: grid;
+    gap: 10px;
+    background-color: #f1f4f8;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.firstDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    gap: 10px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08), 0 3px 9px rgba(241, 244, 248, 0.7);}
+
+.secondDiv{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.icon2{
+    cursor: pointer;
+    font-size: 30px;
+    color: #a5a6a6;
+  }
+
+.icon2:hover{
+    color: #252b36;
+}
+
+input[type="text"] {
+    background-color: transparent;
+    color: black; /* Adjust the color as needed */
+    outline: none;
+    width: 100%;
+  }
+
+.btnSearch{
+    background-color: #2a68ff;
+    width: 100px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.btnSearch:hover{
+    background-color: #1e4bbf;
+}
+
+.thirdDiv{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.singleSearch{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.SingleSearch label {
+    color: #808080; /* Text color */
+    font-weight: 600; /* Font weight: 600 corresponds to "semibold" in Tailwind */
+    margin-bottom: 0.5rem; /* Adjust the margin as needed */
+    gap: 5px;
+  }
+  
+  .SingleSearch select {
+    background-color: white;
+    border-radius: 3px;
+    padding: 0.5rem 0.5rem; /* Adjust the padding as needed */
+    border: 1px solid #d1d5db; /* Optional: Add border for select */
+    outline: none; /* Optional: Remove outline on focus */
+  }
+
+  span{
+    cursor: pointer;
+    color: #a1a1a1;
+  }

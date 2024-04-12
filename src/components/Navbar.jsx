@@ -3,7 +3,7 @@ import { AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Avatar, 
 import { GlobalStyles } from '@mui/material';   //get rid spaces between appbar and webpage
 import MenuIcon from '@mui/icons-material/Menu';
 
-const pages = ['Message', 'Jobs'];
+const pages = ['Jobs', 'Companies', 'About', 'Contact', 'Blog', 'Login', 'Register'];
 const settings = ['Dashboard', 'Settings'];
 
 function Navbar() {
@@ -39,12 +39,12 @@ function Navbar() {
                                 mr: 2,
                                 display: { xs: 'none', md: 'flex' },
                                 fontFamily: 'serif',
-                                fontWeight: 900,
-                                fontSize: '2.3rem',
+                                fontWeight: 500,
+                                fontSize: '2rem',
                                 letterSpacing: '.1rem',
                                 color: 'black',
                                 textDecoration: 'none',
-                                mr: 115, // Increase the margin-right for more space
+                                mr: 75, // Increase the margin-right for more space
                             }}
                         >
                             ProFolio
@@ -98,8 +98,8 @@ function Navbar() {
                                 display: { xs: 'flex', md: 'none' },
                                 flexGrow: 1,
                                 fontFamily: 'serif',
-                                fontWeight: 900,
-                                fontSize: '2.1rem',
+                                fontWeight: 500,
+                                fontSize: '2rem',
                                 letterSpacing: '.1rem',
                                 color: 'black',
                                 textDecoration: 'none',
@@ -117,9 +117,9 @@ function Navbar() {
                                         color: 'black',
                                         display: 'block',
                                         fontFamily: 'serif',
-                                        fontWeight: 500,
-                                        fontSize: '1.7rem',
-                                        mr: 7, // Increase the margin-right for more space
+                                        fontWeight: 200,
+                                        fontSize: '1.2rem',
+                                        mr: 2, // Increase the margin-right for more space
                                         textTransform: 'none', // Prevents all caps
                                     }}
                                 >
