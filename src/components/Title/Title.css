@@ -1,0 +1,19 @@
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the start of the flex container */
+    flex-direction: column; /* Arrange items vertically */
+    padding: 3rem;
+  }
+  
+  .title h2 {
+    font-size: 1.25rem; /* Example size (adjust as needed) */
+    font-weight: bold; /* Make the font bold */
+    margin-bottom: 10px; /* Add space between heading and paragraph */
+  }
+  
+  .title p {
+    font-size: 1rem; /* Example size (adjust as needed) */
+    margin-top: 0; /* Remove default margin from paragraph */
+    color: #6f6f6f;
+  }
