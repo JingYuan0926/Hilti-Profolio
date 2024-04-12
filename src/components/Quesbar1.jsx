@@ -1,7 +1,7 @@
 import React from 'react'
 import { Typography, Box, TextField } from '@mui/material';
 
-const Quesbar = (activeStep) => {
+const Quesbar1 = (activeStep) => {
 
     return (
         <div>
@@ -150,4 +150,4 @@ const Quesbar = (activeStep) => {
     )
 }
 
-export default Quesbar
+export default Quesbar1
