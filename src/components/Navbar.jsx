@@ -122,6 +122,16 @@ function Navbar() {
                                         fontSize: '1.2rem',
                                         mr: 1, // Increase the margin-right for more space
                                         textTransform: 'none', // Prevents all caps
+                                        '&:hover::before': {
+                                            content: '""',
+                                            position: 'absolute',
+                                            height: '4px',
+                                            width: '100%',
+                                            background: '#2a68ff',
+                                            right: '0',
+                                            bottom: '-10px',
+                                            color: '#2a68ff',
+                                        }
                                     }}
                                 >
                                     {page}
