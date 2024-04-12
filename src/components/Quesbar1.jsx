@@ -13,19 +13,18 @@ const Quesbar1 = (activeStep) => {
         question5Answer: '',
     });
 
-    useEffect(() => {
-        // This function will fetch the question immediately when the component mounts.
-        const fetchQuestion = async () => {
-            const res = await fetch('http://localhost:3001/generateGeneralQuestion', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            })
-                .then((res) => res.json())
-                .then((data) => setResponse(data.message));
-        };
+    const fetchQuestion = async () => {
+        const res = await fetch('http://localhost:3001/generateGeneralQuestion', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+            .then((res) => res.json())
+            .then((data) => setResponse(data.message));
+    };
 
+    useEffect(() => {
         fetchQuestion();
     }, []);
 
@@ -54,7 +53,6 @@ const Quesbar1 = (activeStep) => {
         })
     };
 
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         setAnswers((prevAnswers) => ({
@@ -62,8 +60,6 @@ const Quesbar1 = (activeStep) => {
             [name]: value,
         }));
     };
-
-
 
     return (
         <div>
@@ -105,4 +101,5 @@ const Quesbar1 = (activeStep) => {
     );
 };
 
-export default Quesbar1
+export default Quesbar1;
+
