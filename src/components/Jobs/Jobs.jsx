@@ -2,8 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 import './Jobs.css'
-import hilti_logo from '../../Assets/hilti_logo.png'
-import Feedback from '../../pages/Feedback.jsx'
+import hilti_logo from '../../assets/hilti_logo.png'
 
 //Import Icons
 import { BiTimeFive } from 'react-icons/bi'
@@ -106,7 +105,7 @@ const Jobs = () => {
             <span>{company}</span>
           </div>
           
-          <Link to= '/Feedback'>
+          <Link to= '/Q'>
           <button className='Apply'>
             Apply Now
           </button>
