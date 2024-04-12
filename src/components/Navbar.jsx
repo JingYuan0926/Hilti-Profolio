@@ -3,7 +3,7 @@ import { AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Avatar, 
 import { GlobalStyles } from '@mui/material';   //get rid spaces between appbar and webpage
 import MenuIcon from '@mui/icons-material/Menu';
 
-const pages = ['Jobs', 'Companies', 'About', 'Contact', 'Blog', 'Login', 'Register'];
+const pages = ['Jobs', 'Companies', 'About', 'Contact', 'Blog'];
 const settings = ['Dashboard', 'Settings'];
 
 function Navbar() {
@@ -44,7 +44,7 @@ function Navbar() {
                                 letterSpacing: '.05rem',
                                 color: '#2a68ff',
                                 textDecoration: 'none',
-                                mr: 55, // Increase the margin-right for more space
+                                mr: 65, // Increase the margin-right for more space
                                 ml: 15
                             }}
                         >
@@ -120,7 +120,7 @@ function Navbar() {
                                         fontFamily: 'Poppins',
                                         fontWeight: 200,
                                         fontSize: '1.2rem',
-                                        mr: 1, // Increase the margin-right for more space
+                                        mr: 2, // Increase the margin-right for more space
                                         textTransform: 'none', // Prevents all caps
                                         '&:hover::before': {
                                             content: '""',
@@ -141,7 +141,7 @@ function Navbar() {
 
                         <Box sx={{ flexGrow: 0 }}>
                             <Tooltip title="Open settings">
-                                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, mr:15 }}>
                                     <Avatar alt="Jess Kim" src="src/assets/jess.png" />
                                 </IconButton>
                             </Tooltip>
