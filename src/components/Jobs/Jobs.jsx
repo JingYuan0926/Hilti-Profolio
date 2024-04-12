@@ -119,19 +119,18 @@ const Jobs = () => {
                   {description}
                 </p>
 
-                <div className='company'>
-                  <img src={companyLogo} alt="Company Logo" className='w-[10%]' />
-                  <span>{company}</span>
-                </div>
-
-                <Link to='/Q'>
-                <button className='Apply' onClick={(e) => applyForJob(title, e)}>
-                  Apply Now
-                </button>
-                </Link>
-
-              </div>
-            )
+          <div className='company'>
+            <img src={companyLogo} alt="Company Logo" className='w-[10%]' />
+            <span>{company}</span>
+          </div>
+          
+          <Link to= '/Q'>
+          <button className='Apply'>
+            Apply Now
+          </button>
+          </Link>
+          </div>
+              )
           })
         }
 

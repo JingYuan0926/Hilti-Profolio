@@ -3,7 +3,7 @@ import { AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Avatar, 
 import { GlobalStyles } from '@mui/material';   //get rid spaces between appbar and webpage
 import MenuIcon from '@mui/icons-material/Menu';
 
-const pages = ['Jobs', 'Companies', 'About', 'Contact', 'Blog', 'Login', 'Register'];
+const pages = ['Jobs', 'Companies', 'About', 'Contact', 'Blog'];
 const settings = ['Dashboard', 'Settings'];
 
 function Navbar() {
@@ -38,13 +38,14 @@ function Navbar() {
                             sx={{
                                 mr: 2,
                                 display: { xs: 'none', md: 'flex' },
-                                fontFamily: 'serif',
-                                fontWeight: 500,
+                                fontFamily: 'Poppins',
+                                fontWeight: 800,
                                 fontSize: '2rem',
-                                letterSpacing: '.1rem',
-                                color: 'black',
+                                letterSpacing: '.05rem',
+                                color: '#2a68ff',
                                 textDecoration: 'none',
-                                mr: 75, // Increase the margin-right for more space
+                                mr: 65, // Increase the margin-right for more space
+                                ml: 15
                             }}
                         >
                             ProFolio
@@ -97,11 +98,11 @@ function Navbar() {
                                 mr: 2,
                                 display: { xs: 'flex', md: 'none' },
                                 flexGrow: 1,
-                                fontFamily: 'serif',
-                                fontWeight: 500,
+                                fontFamily: 'Poppins',
+                                fontWeight: 800,
                                 fontSize: '2rem',
-                                letterSpacing: '.1rem',
-                                color: 'black',
+                                letterSpacing: '.05rem',
+                                color: '#2a68ff',
                                 textDecoration: 'none',
                             }}
                         >
@@ -114,13 +115,23 @@ function Navbar() {
                                     onClick={handleCloseNavMenu}
                                     sx={{
                                         my: 2,
-                                        color: 'black',
+                                        color: '#6f6f6f',
                                         display: 'block',
-                                        fontFamily: 'serif',
+                                        fontFamily: 'Poppins',
                                         fontWeight: 200,
                                         fontSize: '1.2rem',
                                         mr: 2, // Increase the margin-right for more space
                                         textTransform: 'none', // Prevents all caps
+                                        '&:hover::before': {
+                                            content: '""',
+                                            position: 'absolute',
+                                            height: '4px',
+                                            width: '100%',
+                                            background: '#2a68ff',
+                                            right: '0',
+                                            bottom: '-10px',
+                                            color: '#2a68ff',
+                                        }
                                     }}
                                 >
                                     {page}
@@ -130,7 +141,7 @@ function Navbar() {
 
                         <Box sx={{ flexGrow: 0 }}>
                             <Tooltip title="Open settings">
-                                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, mr:15 }}>
                                     <Avatar alt="Jess Kim" src="src/assets/jess.png" />
                                 </IconButton>
                             </Tooltip>
