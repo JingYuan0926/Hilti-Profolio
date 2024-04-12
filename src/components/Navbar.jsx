@@ -38,13 +38,14 @@ function Navbar() {
                             sx={{
                                 mr: 2,
                                 display: { xs: 'none', md: 'flex' },
-                                fontFamily: 'serif',
-                                fontWeight: 500,
+                                fontFamily: 'Poppins',
+                                fontWeight: 800,
                                 fontSize: '2rem',
-                                letterSpacing: '.1rem',
-                                color: 'black',
+                                letterSpacing: '.05rem',
+                                color: '#2a68ff',
                                 textDecoration: 'none',
-                                mr: 75, // Increase the margin-right for more space
+                                mr: 55, // Increase the margin-right for more space
+                                ml: 15
                             }}
                         >
                             ProFolio
@@ -97,11 +98,11 @@ function Navbar() {
                                 mr: 2,
                                 display: { xs: 'flex', md: 'none' },
                                 flexGrow: 1,
-                                fontFamily: 'serif',
-                                fontWeight: 500,
+                                fontFamily: 'Poppins',
+                                fontWeight: 800,
                                 fontSize: '2rem',
-                                letterSpacing: '.1rem',
-                                color: 'black',
+                                letterSpacing: '.05rem',
+                                color: '#2a68ff',
                                 textDecoration: 'none',
                             }}
                         >
@@ -114,12 +115,12 @@ function Navbar() {
                                     onClick={handleCloseNavMenu}
                                     sx={{
                                         my: 2,
-                                        color: 'black',
+                                        color: '#6f6f6f',
                                         display: 'block',
-                                        fontFamily: 'serif',
+                                        fontFamily: 'Poppins',
                                         fontWeight: 200,
                                         fontSize: '1.2rem',
-                                        mr: 2, // Increase the margin-right for more space
+                                        mr: 1, // Increase the margin-right for more space
                                         textTransform: 'none', // Prevents all caps
                                     }}
                                 >

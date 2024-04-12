@@ -105,7 +105,7 @@ const Jobs = () => {
             <span>{company}</span>
           </div>
           
-          <Link to= '/Q'>
+          <Link to= '/Q'onClick={() => window.scrollTo(0, 0)}>
           <button className='Apply'>
             Apply Now
           </button>
