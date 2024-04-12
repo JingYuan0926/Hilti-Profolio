@@ -20,6 +20,7 @@ const applyForJob = async (role, e) => {
   });
 
   const data = await response.json();
+  console.log(role);
   // Now data contains the generated questions which you can display to the use
   // Do something with the data, like storing it in state or navigating to another route where you can display the questions
 };
@@ -119,18 +120,18 @@ const Jobs = () => {
                   {description}
                 </p>
 
-          <div className='company'>
-            <img src={companyLogo} alt="Company Logo" className='w-[10%]' />
-            <span>{company}</span>
-          </div>
-          
-          <Link to= '/Q'>
-          <button className='Apply'>
-            Apply Now
-          </button>
-          </Link>
-          </div>
-              )
+                <div className='company'>
+                  <img src={companyLogo} alt="Company Logo" className='w-[10%]' />
+                  <span>{company}</span>
+                </div>
+
+                <Link to='/Q'>
+                  <button type="button" className='Apply' onClick={(e) => applyForJob(title, e)}>
+                    Apply Now
+                  </button>
+                </Link>
+              </div>
+            )
           })
         }
 

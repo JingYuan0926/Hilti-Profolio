@@ -25,8 +25,29 @@ const Quesbar1 = (activeStep) => {
     };
 
     useEffect(() => {
+        const fetchQuestion = async () => {
+            try {
+                console.log("Fetching questions..."); // Log when we're making the fetch call
+                const response = await fetch('http://localhost:3001/generateGeneralQuestion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`); // Check for HTTP errors
+                }
+                const data = await response.json();
+                setResponse(data.message);
+                console.log("Questions fetched:", data.message); // Log the fetched data
+            } catch (error) {
+                console.error("Failed to fetch questions:", error);
+            }
+        };
+
         fetchQuestion();
-    }, []);
+    }, []); // Ensuring this runs only once on component mount
+
 
 
     const handleSubmit = async (e) => {
@@ -44,7 +65,7 @@ const Quesbar1 = (activeStep) => {
         console.log(submission);
 
         // Now submit this structured data to the server
-        fetch('http://localhost:3001/generalQuestionAnswer', {
+        await fetch('http://localhost:3001/generalQuestionAnswer', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

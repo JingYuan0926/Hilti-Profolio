@@ -21,8 +21,6 @@ app.post('/role', async (req, res) => {
     console.log(role);
     // Store the role in the server variable
     currentRole = role;
-
-    // Respond to the client that the role was successfully set
 });
 
 
@@ -36,7 +34,7 @@ app.post('/generateGeneralQuestion', async (req, res) => {
             for example question1:"",question2:"",question3:"",question4:"",question5:"" Short question should be enough`
             },
         ],
-        model: "gpt-3.5-turbo-1106",
+        model: "gpt-3.5-turbo",
         max_tokens: 1000,
         response_format: { type: "json_object" },
         temperature: 1.0,
@@ -67,7 +65,7 @@ app.post('/generalQuestionAnswer', async (req, res) => {
             }
 
         ],
-        model: "gpt-3.5-turbo-1106",
+        model: "gpt-3.5-turbo",
         max_tokens: 1000,
         temperature: 1.0,
     });
