@@ -1,26 +1,104 @@
-const stepsData = [
-    {
-      title: 'General Questions',
-      items: [
-        { prompt: 'What motivates you to pursue a career in software engineering?' },
-        // ... other questions for step 1
-      ],
-    },
-    {
-      title: 'Technical Questions',
-      items: [
-        { prompt: 'Explain the benefits and drawbacks of different frontend frameworks.' },
-        // ... other questions for step 2
-      ],
-    },
-    {
-      title: 'Soft Skills',
-      items: [
-        { prompt: 'How do you approach collaborating with a designer on a new feature?' },
-        // ... other questions for step 3
-      ],
-    },
-  ];
-  
-  export default stepsData;
-  
+/*const stepsData = [
+  {
+    title: 'General Questions',
+    items: [
+      {
+        prompt: 'Question 1',
+        jsx: (
+          <React.Fragment>
+            {/* The question }
+            <Typography>{'(*the question)'}</Typography>
+            {/* The form }
+            <Box
+              component="form"
+              sx={{
+                pl: 6,
+                '& .MuiTextField-root': { m: 1, width: '150ch' },
+              }}
+              noValidate
+              autoComplete="off"
+            >
+              <div>
+                <TextField
+                  id="outlined-multiline-flexible"
+                  multiline
+                  maxRows={4}
+                />
+              </div>
+            </Box>
+          </React.Fragment>
+        ),
+      },
+      // Repeat the same structure for other questions
+    ],
+  },
+  {
+    title: 'Technical Questions',
+    items: [
+      {
+        prompt: 'Question 1',
+        jsx: (
+          <React.Fragment>
+            {/* The question }
+            <Typography>{'(*the question)'}</Typography>
+            {/* The form }
+            <Box
+              component="form"
+              sx={{
+                pl: 6,
+                '& .MuiTextField-root': { m: 1, width: '150ch' },
+              }}
+              noValidate
+              autoComplete="off"
+            >
+              <div>
+                <TextField
+                  id="outlined-multiline-flexible"
+                  multiline
+                  maxRows={4}
+                />
+              </div>
+            </Box>
+          </React.Fragment>
+        ),
+      },
+      // Repeat the same structure for other questions
+    ],
+  },
+  {
+    title: 'Soft Skills',
+    items: [
+      {
+        prompt: 'Question 1',
+        jsx: (
+          <React.Fragment>
+            {/* The question }
+            <Typography>{'(*the question)'}</Typography>
+            {/* The form }
+            <Box
+              component="form"
+              sx={{
+                pl: 6,
+                '& .MuiTextField-root': { m: 1, width: '150ch' },
+              }}
+              noValidate
+              autoComplete="off"
+            >
+              <div>
+                <TextField
+                  id="outlined-multiline-flexible"
+                  multiline
+                  maxRows={4}
+                />
+              </div>
+            </Box>
+          </React.Fragment>
+        ),
+      },
+      // Repeat the same structure for other questions
+    ],
+  },
+];
+
+export default stepsData;
+*/

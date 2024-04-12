@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography, Box, Button } from '@mui/material';
-import { Progress, Quesbar, Steps } from '../components';
+import { Progress, stepsData, Steps } from '../components';
 import { useNavigate } from 'react-router-dom';
 
 const Ques = () => {
@@ -43,7 +43,7 @@ const Ques = () => {
         Questionnaire
       </Typography>
       <Progress activeStep={activeStep} setActiveStep={setActiveStep} />
-      <Quesbar activeStep={activeStep} />
+      <stepsData activeStep={activeStep} />
 
       {activeStep === Steps.length ? (
         <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
