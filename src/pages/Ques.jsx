@@ -1,5 +1,5 @@
-import React from 'react';
-import {Box, Button, Typography} from '@mui/material';
+import React, { useRef, useState } from 'react';
+import { Box, Button, Typography } from '@mui/material';
 import { Progress, Quesbar1, Quesbar2, Quesbar3 } from '../components'; // Import the necessary Quesbar components
 import { useNavigate } from 'react-router-dom';
 
@@ -8,26 +8,26 @@ const Steps = ['General Questions', 'Technical Questions', 'Soft Skills'];
 const Ques = () => {
   const [activeStep, setActiveStep] = React.useState(0);
   const navigate = useNavigate(); // This line declares the navigate function using useNavigate()
+  const quesbarRefs = [useRef(), useRef(), useRef()];
 
-  const handleNext = () => {
+  const handleNext = async () => {
     if (activeStep < Steps.length - 1) {
-      // Move to the next step
-      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+      const currentForm = quesbarRefs[activeStep].current;
+      if (currentForm && currentForm.handleSubmitForm) {
+        await currentForm.handleSubmitForm(); // Make sure submission is awaited
+      }
+      setActiveStep(prev => prev + 1);
       window.scrollTo(0, 0);
     } else {
-      // Navigate to another page
-      navigate('/Result'); // Update this path to your desired route
+      // Handle the final step submission before navigating
+      const currentForm = quesbarRefs[activeStep].current;
+      if (currentForm && currentForm.handleSubmitForm) {
+        await currentForm.handleSubmitForm();
+      }
+      navigate('/Result');
     }
   };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-    window.scrollTo(0, 0);
-  };
-  const handleReset = () => {
-    setActiveStep(0);
-  };
-
+  
   return (
     <Box sx={{ overflowX: 'hidden' }}>
       <Typography
@@ -47,25 +47,17 @@ const Ques = () => {
       </Typography>
       <Progress activeStep={activeStep} setActiveStep={setActiveStep} />
       {/* Conditionally render the appropriate Quesbar component based on the activeStep */}
-      {activeStep === 0 && <Quesbar1 />}
-      {activeStep === 1 && <Quesbar2 />}
-      {activeStep === 2 && <Quesbar3 />}
+      {activeStep === 0 && <Quesbar1 ref={quesbarRefs[0]} />}
+      {activeStep === 1 && <Quesbar2 ref={quesbarRefs[1]} />}
+      {activeStep === 2 && <Quesbar3 ref={quesbarRefs[2]} />}
 
       {activeStep === Steps.length ? (
         <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
           <Box sx={{ flex: '1 1 auto' }} />
-          <Button onClick={handleReset}>Reset</Button>
         </Box>
       ) : (
         <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-          <Button
-            color="inherit"
-            disabled={activeStep === 0}
-            onClick={handleBack}
-            sx={{ mr: 1 }}
-          >
-            Back
-          </Button>
+
           <Box sx={{ flex: '1 1 auto' }} />
           <Button onClick={handleNext}>
             {activeStep === Steps.length - 1 ? 'Finish' : 'Next'}

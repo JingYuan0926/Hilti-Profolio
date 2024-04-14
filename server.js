@@ -176,34 +176,55 @@ app.post("/softSkillsQuestionAnswer", async (req, res) => {
     allAnswers.push(softSkillsQuestionAnswerText);
     console.log(allAnswers);
   }
+  res.sendStatus(200); // Respond with success status
+})
 
-  // Analyze all the answers stored in the array
-  const combinedAnswers = allAnswers.join("\n\n");
+app.post("/result", async (req, res) => {
+  // Convert all answers from an array into a single string
+  const answersText = allAnswers.join("\n");
+
   const acceptAnswer = await openai.chat.completions.create({
     messages: [
       {
         role: "system",
-        content: `Now analyze the answers for all the questions. Determine if the user is eligible for the job of ${currentRole}. An empty answer indicates the user does not know how to respond, and they are not suitable.`,
+        content: `Based on the following responses, evaluate the suitability of the candidate for the role of ${currentRole} at Hilti. Provide a detailed evaluation in the structured format below:
+        Please provide the answers in JSON format as follows:
+        {
+          "Eligible": "The user is eligible or not eligible for the role of ${currentRole} at Hilti.",
+          "EligibleBool": "Yes or No",
+          "Steps to Enhance the users Eligibility for the Position": ["Step 1: Description of Step 1", "Step 2: Description of Step 2", "Step 3: Description of Step 3", "You May Add More Steps if Needed"],
+          "Points": {
+            "General Question ": "x out of 30",
+            "Soft Skills": "y out of 30",
+            "Hard Skills": "z out of 30",
+            "English Writting Skills, Effort and Commitment": "w out of 10"
+          },
+          "Total Points": "Total out of 100",
+          "Good Luck Sentence": "A motivational sentence encouraging the candidate."
+        }`
       },
       {
         role: "user",
-        content: combinedAnswers,
+        content: answersText,
       },
     ],
     model: "gpt-3.5-turbo",
     max_tokens: 1000,
+    response_format: { type: "json_object" },
     temperature: 1.0,
   });
 
-  // Log the analysis result
-  console.log("Answer analysis:", acceptAnswer.choices[0].message.content);
+  console.log(acceptAnswer.choices[0].message.content);
 
-  // Clear the allAnswers array for the next set of answers
-  allAnswers = [];
-
-  // Respond with the combined analysis
-  res.json(acceptAnswer.choices[0].message.content);
+  if (acceptAnswer) {
+    res.json({
+      message: acceptAnswer.choices[0].message.content,
+    });
+  } else {
+    res.status(500).json({ error: "Failed to process completion" });
+  }
 });
+
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
