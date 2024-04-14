@@ -14,6 +14,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 let currentRole = "";
+const temperature = 1.0;
 
 app.post("/role", async (req, res) => {
   // Extract the role from the request body
@@ -38,7 +39,7 @@ app.post("/generateGeneralQuestion", async (req, res) => {
     model: "gpt-3.5-turbo",
     max_tokens: 1000,
     response_format: { type: "json_object" },
-    temperature: 1.0,
+    temperature: temperature,
   });
 
   const messageContent = JSON.parse(generalQuestion.choices[0].message.content);
@@ -100,7 +101,7 @@ app.post("/generateTechnicalQuestion", async (req, res) => {
     model: "gpt-3.5-turbo",
     max_tokens: 1000,
     response_format: { type: "json_object" },
-    temperature: 1.0,
+    temperature: temperature,
   });
 
   const messageContent = JSON.parse(
@@ -147,7 +148,7 @@ app.post("/generateSoftSkillsQuestion", async (req, res) => {
     model: "gpt-3.5-turbo",
     max_tokens: 1000,
     response_format: { type: "json_object" },
-    temperature: 1.0,
+    temperature: temperature,
   });
 
   const messageContent = JSON.parse(
@@ -187,12 +188,12 @@ app.post("/result", async (req, res) => {
     messages: [
       {
         role: "system",
-        content: `Based on the following responses, evaluate the suitability of the candidate for the role of ${currentRole} at Hilti. Provide a detailed evaluation in the structured format below:
+        content: `Based on the following responses, evaluate the suitability of the candidate for the role of ${currentRole} at Hilti. 
         Please provide the answers in JSON format as follows:
         {
           "Eligible": "The user is eligible or not eligible for the role of ${currentRole} at Hilti.",
           "EligibleBool": "Yes or No",
-          "Steps to Enhance the users Eligibility for the Position": ["Step 1: Description of Step 1", "Step 2: Description of Step 2", "Step 3: Description of Step 3", "You May Add More Steps if Needed"],
+          "Steps to Enhance the users Eligibility for the Position": ["Step 1: Description of Step 1...", "Step 2: Description of Step 2...", "Step 3: Description of Step 3...", "Additional steps if applicable..."],
           "Points": {
             "General Question ": "x out of 30",
             "Soft Skills": "y out of 30",
@@ -211,7 +212,7 @@ app.post("/result", async (req, res) => {
     model: "gpt-3.5-turbo",
     max_tokens: 1000,
     response_format: { type: "json_object" },
-    temperature: 1.0,
+    temperature: temperature,
   });
 
   console.log(acceptAnswer.choices[0].message.content);

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Avatar, Button, Tooltip, MenuItem } from '@mui/material';
+import { AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Avatar, Button, Tooltip, MenuItem, Link } from '@mui/material';
 import { GlobalStyles } from '@mui/material';   //get rid spaces between appbar and webpage
 import MenuIcon from '@mui/icons-material/Menu';
 
@@ -34,7 +34,7 @@ function Navbar() {
                         <Typography
                             noWrap
                             component="a"
-                            href="#app-bar-with-responsive-menu"
+                            href="/"
                             sx={{
                                 mr: 2,
                                 display: { xs: 'none', md: 'flex' },
@@ -88,7 +88,6 @@ function Navbar() {
                             </Menu>
 
                         </Box>
-
                         <Typography
                             variant="h5"
                             noWrap
@@ -141,7 +140,7 @@ function Navbar() {
 
                         <Box sx={{ flexGrow: 0 }}>
                             <Tooltip title="Open settings">
-                                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, mr:15 }}>
+                                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, mr: 15 }}>
                                     <Avatar alt="Jess Kim" src="src/assets/jess.png" />
                                 </IconButton>
                             </Tooltip>
