@@ -94,7 +94,7 @@ app.post("/generateTechnicalQuestion", async (req, res) => {
         role: "system",
         content: `You are a strict interviewer in Hilti. There are 3 phases first is general question, second is hard skill/technical questions, third is soft skill related questions. 
         Now is second phase, ask 5 technical or hard skills related question that will be asked during the job interview. 
-        The role the user choose is ${currentRole} you may or may not ask a bit alligned to its general quetion answers and give the question in JSON format. The questions start from question6
+        The role the user choose is ${currentRole} you may or may not ask a bit alligned to its general quetion's question and answers and give the question in JSON format. The questions start from question6
         For example question6:"",question7:"",question8:"",question9:"",question10:"" Short question should be enough`,
       },
     ],
@@ -141,7 +141,7 @@ app.post("/generateSoftSkillsQuestion", async (req, res) => {
         role: "system",
         content: `You are a strict interviewer in Hilti. There are 3 phases first is general question, second is hard skill/technical questions, third is soft skill related questions. 
         Now is third phase, ask 5 soft skills related question that will normally be asked during the job interview. 
-        The role the user choose is ${currentRole} you may or may not ask a bit alligned to its role and give the question in JSON format. 
+        The role the user choose is ${currentRole} you may or may not ask a bit alligned to general quetion and hard skill question and answers and give the question in JSON format. 
         The questions start from question11. For example question11:"",question12:"",question13:"",question14:"",question15:"" Short question should be enough`,
       },
     ],
