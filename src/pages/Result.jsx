@@ -1,10 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { Typography, Box, CircularProgress, Grid } from '@mui/material';
+import { Typography, Box, CircularProgress, Grid, Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const Result = () => {
 
     const [result, setResult] = useState(null);
     const [loading, setLoading] = useState(true);
+
+    const navigate = useNavigate(); 
+
+    const handleNextClick = () => {
+        if (totalPoints < 55) {
+            // If the percentage is less than 55%, navigate to the image fail
+            navigate('/Application roadmap');
+        } else {
+            // If the percentage is 55% or higher, navigate to the image success
+            navigate('/Application-Roadmap');
+        }
+    };
 
     useEffect(() => {
         const fetchResult = async () => {
@@ -112,13 +125,18 @@ const Result = () => {
                                     }}
                                 >
                                     <Typography variant="h6" component="div" sx={{ fontWeight: 'bold' }}>
-                                         {totalPointsText}
+                                        {totalPointsText}
                                     </Typography>
                                 </Box>
                             </Box>
                         </Box>
 
                     </Grid>
+                    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', mt:5 }}>
+                    <button className="ml-4 border border-blue-700 bg-white text-blue-700 hover:bg-blue-700 hover:text-white font-bold py-2 px-4 rounded-full text-base" 
+                    onClick={handleNextClick}>
+                    Next</button>
+                    </Box>
                 </Grid>
             )}
         </Box>

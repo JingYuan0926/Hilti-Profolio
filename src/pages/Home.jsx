@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar,Searchbar,Jobs,Title } from '../components';
+import { Searchbar,Jobs } from '../components';
 
 
 

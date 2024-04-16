@@ -125,7 +125,7 @@ const Jobs = () => {
                   <span>{company}</span>
                 </div>
 
-                <Link to='/Q'>
+                <Link to='/Tailored AI Questionnaire'>
                   <button type="button" className='Apply' onClick={(e) => applyForJob(title, e)}>
                     Apply Now
                   </button>
