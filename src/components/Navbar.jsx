@@ -44,7 +44,7 @@ function Navbar() {
                                 letterSpacing: '.05rem',
                                 color: '#2a68ff',
                                 textDecoration: 'none',
-                                mr: 65, // Increase the margin-right for more space
+                                mr: 62, // Increase the margin-right for more space
                                 ml: 15
                             }}
                         >
