@@ -98,8 +98,8 @@ const Result = () => {
                     <Grid item xs={3} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
                             <Typography variant="h6" component="div" sx={{ fontWeight: 'bold', maxWidth: '100%' }}>
-                                Your Skill Percentile<br />
-                                Compared to Each Applicant
+                                Your Skill Gap Compared<br />
+                                to the requirement
                             </Typography>
                             <Box
                                 sx={{
