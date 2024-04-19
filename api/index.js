@@ -16,6 +16,10 @@ app.use(cors());
 let currentRole = "";
 const temperature = 1.0;
 
+app.get("/", (req, res) => res.send("Express on Vercel"));
+
+app.listen(3000, () => console.log("Server ready on port 3000."));
+
 app.post("/role", async (req, res) => {
   // Extract the role from the request body
   const { role } = req.body;
@@ -227,6 +231,4 @@ app.post("/result", async (req, res) => {
 });
 
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
+module.exports = app;
